@@ -53,7 +53,7 @@ for _,v in {'newvape', 'newvape/profiles'} do
     if isfolder('newvape/profiles') then
         task.spawn(delfolder, 'newvape/profiles')
         task.spawn(makefolder, 'newvape/profiles')
-    else
+    elseif not isfolder('newvape/profiles') then
         task.spawn(makefolder, 'newvape/profiles')
     end
 end
