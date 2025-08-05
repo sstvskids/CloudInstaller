@@ -58,12 +58,12 @@ api.getFolders = function(url, folder)
         for _, v in httpService:JSONDecode(game:HttpGet(scanurl)) do
             if v.type == 'dir' then
                 table.insert(folder, v.path)
-                scan(v.path)
+                task.spawn(scan, v.path)
             end
         end
     end
 
-    scan('cloudcfg')
+    task.spawn(scan, 'cloudcfg')
 end
 
 api.downloadURLs = function(url, reponame, folders)

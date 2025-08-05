@@ -62,7 +62,7 @@ local folders = {}
 gitAPI.getFolders(url, folders)
 
 for i,v in folders do
-    gitAPI.downloadURLs(url, 'newvape/profiles', v)
+    task.spawn(gitAPI.downloadURLs, url, 'newvape/profiles', v)
 end
 
 setclipboard('https://discord.gg/ASr7NKdfzc')
