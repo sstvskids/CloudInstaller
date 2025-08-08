@@ -18,7 +18,7 @@ end
 
 -- installer
 local api = loadstring(game:HttpGet('https://raw.githubusercontent.com/sstvskids/CloudInstaller/refs/heads/main/helper/api.lua'))()
-local url = api.getURL('sstvskids', 'troll.rip')
+local url = api.getURL('sstvskids', 'CloudInstaller')
 
 for _,v in {'newvape', 'newvape/profiles'} do
     if not isfolder('newvape') then
