@@ -18,7 +18,7 @@ end
 
 -- installer
 local api = loadstring(game:HttpGet('https://raw.githubusercontent.com/sstvskids/CloudInstaller/refs/heads/main/helper/api.lua'))()
-local url = gitAPI.getURL('sstvskids', 'troll.rip')
+local url = api.getURL('sstvskids', 'troll.rip')
 
 for _,v in {'newvape', 'newvape/profiles'} do
     if not isfolder('newvape') then
@@ -35,10 +35,10 @@ for _,v in {'newvape', 'newvape/profiles'} do
 end
 
 local folders = {}
-gitAPI.getFolders(url, folders)
+api.getFolders(url, folders)
 
 for i,v in folders do
-    task.spawn(gitAPI.downloadURLs, url, 'newvape/profiles', v)
+    task.spawn(api.downloadURLs, url, 'newvape/profiles', v)
 end
 
 setclipboard('https://discord.gg/ASr7NKdfzc')
