@@ -1,21 +1,3 @@
-local loadstring = loadstring or function(path)
-    local function randomString(length)
-        local result = ''
-        for i = 1, length do
-            result = result..string.char(math.random(97, 122))
-        end
-        return result
-    end
-    local str = randomString(10)
-
-    if not isfile(str) then
-        writefile(str, path)
-        loadfile(str)()
-        task.wait(0.06)
-        delfile(str)
-    end
-end
-
 -- installer
 local api = loadstring(game:HttpGet('https://raw.githubusercontent.com/sstvskids/CloudInstaller/refs/heads/main/helper/api.lua'))()
 local url = api.getURL('sstvskids', 'CloudInstaller')
