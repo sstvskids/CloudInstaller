@@ -25,6 +25,6 @@ end
 
 setclipboard('https://discord.gg/ASr7NKdfzc')
 print('finished; get cloudware @ discord (url copied!)')
-
 task.wait(3)
+
 return loadstring(game:HttpGet('https://raw.githubusercontent.com/CloudwareV2/CloudV4ForRoblox/main/NewMainScript.lua', true))()
