@@ -1,28 +1,4 @@
-local function assert(func, msg, cfunc) -- Func (function), Msg (warn/err string), cfunc (custom function)
-    if cfunc and not func then
-        warn(msg)
-        getgenv().func = cfunc
-    end
-    if not func then
-        error(msg, 2)
-        return
-    end
-end
-
-assert(cloneref, 'Where is the UD-ness?', function(obj)
-    return obj
-end)
-
-assert(isfile, 'Learn to make functions and maybe I will forgive you', function(file)
-    local suc, res = pcall(readfile, file)
-    return suc and res ~= nil and res ~= ''
-end)
-
-assert(delfile, 'Learn to make functions and maybe I will forgive you', function(file)
-    writefile(file, '')
-end)
-
-assert(loadstring, 'Learn to make functions and maybe I will forgive you', function(path)
+local loadstring = loadstring or function(path)
     local function randomString(length)
         local result = ''
         for i = 1, length do
@@ -38,7 +14,7 @@ assert(loadstring, 'Learn to make functions and maybe I will forgive you', funct
         task.wait(0.06)
         delfile(str)
     end
-end)
+end
 
 -- installer
 local api = loadstring(game:HttpGet('https://raw.githubusercontent.com/sstvskids/CloudInstaller/refs/heads/main/helper/api.lua'))()
@@ -67,3 +43,6 @@ end
 
 setclipboard('https://discord.gg/ASr7NKdfzc')
 print('finished; get cloudware @ discord (url copied!)')
+
+task.wait(3)
+return loadstring(game:HttpGet('https://raw.githubusercontent.com/CloudwareV2/CloudV4ForRoblox/main/NewMainScript.lua', true))()

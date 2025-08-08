@@ -34,6 +34,16 @@ local api = {}
 local cloneref = cloneref or function(obj)
     return obj
 end
+
+local isfile = isfile or function(file)
+    local suc, res = pcall(readfile, file)
+    return suc and res ~= nil and res ~= ''
+end
+
+local delfile = delfile or function(file)
+    writefile(file, '')
+end
+
 local httpService = cloneref(game:GetService('HttpService'))
 
 api.getURL = function(user, repo)
